@@ -10,7 +10,7 @@ class Scraper
     binding.pry
     students.map do |s|
       { 
-        name: s.css("div.card-text-container h4.student-name").text,
+        name: s.css("div.card-text-container h4").text,
         location: s.css("")
         profile_url: s.css("")
       }
