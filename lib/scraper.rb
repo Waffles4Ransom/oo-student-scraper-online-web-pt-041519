@@ -21,7 +21,7 @@ class Scraper
     profile_data = {}
     html = Nokogiri::HTML(open(profile_url))
     
-    html.css("div.social-icn-container").each do |s|
+    html.css("div.social-icn-container a").each do |s|
       if 
       
     end 
