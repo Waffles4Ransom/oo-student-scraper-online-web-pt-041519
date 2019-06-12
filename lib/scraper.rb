@@ -7,11 +7,11 @@ class Scraper
   def self.scrape_index_page(index_url)
     html = Nokogiri::HTML(open(index_url))
     students = html.css("div.student-card")
-    binding.pry
+    #binding.pry
     students.map do |s|
       { 
         name: s.css("div.card-text-container h4").text,
-        location: s.css("div.card-text-container p")
+        location: s.css("div.card-text-container p").text,
         profile_url: s.css("a").attr("href").value
       }
     end 
