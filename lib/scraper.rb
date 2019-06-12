@@ -30,6 +30,7 @@ class Scraper
         profile_data[:github] = s.attr("href").value
       else
         profile_data[:blog] = s.attr("href").value
+      end
     end 
     
     profile_data[:profile_quote] = html.css("div.profile-quote").text
