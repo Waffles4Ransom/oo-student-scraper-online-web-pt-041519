@@ -23,13 +23,13 @@ class Scraper
     
     html.css("div.social-icon-container a").each do |s|
       if s.attribute("href").value.include?("twitter")
-        profile_data[:twitter] = s.attr("href").value
-      elsif s.attr("href").value.include?("linkedin")
-        profile_data[:linkedin] = s.attr("href").value
-      elsif s.attr("href").value.include?("github")
-        profile_data[:github] = s.attr("href").value
+        profile_data[:twitter] = s.attribute("href").value
+      elsif s.attribute("href").value.include?("linkedin")
+        profile_data[:linkedin] = s.attribute("href").value
+      elsif s.attribute("href").value.include?("github")
+        profile_data[:github] = s.attribute("href").value
       else
-        profile_data[:blog] = s.attr("href").value
+        profile_data[:blog] = s.attribute("href").value
       end
     end 
     
