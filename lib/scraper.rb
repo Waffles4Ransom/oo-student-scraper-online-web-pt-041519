@@ -19,7 +19,12 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     html = Nokogiri::HTML(open(profile_url))
-    
+    html.map do |s|
+      {
+        
+      }
+      
+    end 
   end
 
 end
