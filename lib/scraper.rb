@@ -11,7 +11,7 @@ class Scraper
     students.map do |s|
       { 
         name: s.css("div.card-text-container h4").text,
-        location: s.css("")
+        location: s.css("div.card-text-container p")
         profile_url: s.css("")
       }
     end 
