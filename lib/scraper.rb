@@ -12,7 +12,7 @@ class Scraper
       { 
         name: s.css("div.card-text-container h4").text,
         location: s.css("div.card-text-container p")
-        profile_url: s.css("")
+        profile_url: s.css("a").attr("href").value
       }
     end 
     #binding.pry
