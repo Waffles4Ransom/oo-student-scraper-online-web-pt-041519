@@ -1,11 +1,19 @@
 require 'open-uri'
 require 'pry'
 
+#'./fixtures/student-site/index.html'
 class Scraper
 
   def self.scrape_index_page(index_url)
-    
+    html = Nokogiri::HTML(open(index_url))
+    students = html.css("div.student-card")
+    #binding.pry
+    students.map do |s|
+    { name: s.css("div.card-text-container h4.student-name").text. location: }
+    end 
+    #binding.pry
   end
+
 
   def self.scrape_profile_page(profile_url)
     
@@ -13,3 +21,10 @@ class Scraper
 
 end
 
+
+ # learn.css("div.student-card").each do |student|
+    #     name = student.css(".student-name").text,
+    #     location = student.css(".student-location").text,
+    #     profile_url = student.css("a").attribute("href").value 
+    #     binding.pry
+    #   # students << student_info
