@@ -18,7 +18,7 @@ class Scraper
 
 
   def self.scrape_profile_page(profile_url)
-    social_data = {}
+    profile_data = {}
     html = Nokogiri::HTML(open(profile_url))
     html.css("div.social-icn-container").each do |s|
       if 
